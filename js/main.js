@@ -56,9 +56,6 @@ function memoryFlipTile(tile,val){
         console.log(val);
         tile.style.backgroundImage = "url(img/" +  val + ")" ;
         console.log(tile.style.backgroundImage);
-		//tile.innerHTML = val;
-        //tile.style.backgroundImage = "url(title_1.jpg)";
-       //'memoryArray[i]'
         
         if(memoryValues.length == 0) {
             memoryValues.push(val);

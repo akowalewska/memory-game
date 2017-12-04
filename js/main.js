@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function (event) {
+    document.getElementById('start-game').addEventListener("click", function () {
+        newBoard();
+    });
+
+});
+
 var memoryArray = ['title_1.jpg', 'title_1.jpg',
     'title_2.jpg', 'title_2.jpg',
     'title_3.jpg', 'title_3.jpg',
@@ -68,22 +75,22 @@ function memoryFlipTile(tile, val) {
             // to check if both cards are a match !
             if (memoryValues[0] == memoryValues[1]) {
                 tilesFlipped += 2;
-                
+
                 // Clear both arrays
                 memoryValues = [];
                 memoryTileIds = [];
-                
+
                 // Check to see if the whole board is cleared
                 if (tilesFlipped == memoryArray.length) {
                     alert("Board cleared... generating new board");
                     document.getElementById('memory-board').innerHTML = "";
                     newBoard();
                 }
-                
+
                 // to check if match is not made !
             } else {
                 function flip2Back() {
-                    
+
                     //Flip the 2 tiles back over
                     var tile1 = document.getElementById(memoryTileIds[0]);
                     var tile2 = document.getElementById(memoryTileIds[1]);
@@ -91,7 +98,7 @@ function memoryFlipTile(tile, val) {
                     tile1.innerHTML = '';
                     tile2.style.backgroundImage = "url(img/tile-bg.jpg)";
                     tile2.innerHTML = '';
-                    
+
                     // Clear both arrays
                     memoryValues = [];
                     memoryTileIds = [];
